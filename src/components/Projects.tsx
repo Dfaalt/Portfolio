@@ -226,7 +226,7 @@ const Projects = () => {
                     )}
                   </div>
 
-                  <div className="flex justify-center mt-auto pt-2">
+                  <div className="flex justify-center mt-auto pt-3">
                     <div className="flex items-center text-primary text-xs sm:text-sm font-medium">
                       <span>Details</span>
                       <ChevronRight className="w-4 h-4 ml-0.5" />

@@ -156,6 +156,13 @@ html {
   @apply absolute rounded-full blur-3xl opacity-30 animate-float;
 }
 
+button,
+a[href],
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* ========================================
    ANIMATIONS
 ======================================== */
