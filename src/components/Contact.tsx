@@ -10,10 +10,50 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+
+    try {
+      setLoading(true);
+      const response = await fetch(
+        "https://formsubmit.co/ajax/ilhammln1101@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _subject: "New Contact Message from Portfolio",
+          }),
+        },
+      );
+
+      const result = await response.json();
+
+      if (result.success === "true" || response.ok) {
+        alert("Message sent successfully!");
+
+        // reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error sending message.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -105,9 +145,16 @@ const Contact = () => {
                   variant="gradient"
                   size="lg"
                   className="w-full"
+                  disabled={loading}
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {loading ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </div>
             </form>

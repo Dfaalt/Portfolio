@@ -212,7 +212,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
-          <motion.a
+          {/* <motion.a
             href="#about"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -220,7 +220,7 @@ const Hero = () => {
           >
             <span className="text-sm mb-2">Scroll</span>
             <ArrowDown className="w-5 h-5" />
-          </motion.a>
+          </motion.a> */}
         </motion.div>
       </div>
     </section>
