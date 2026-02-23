@@ -28,14 +28,14 @@ const quickReplies: QuickReply[] = [
 
 const predefinedResponses: Record<string, string> = {
   about:
-    "I'm a passionate full-stack developer with 5+ years of experience in web development, IoT systems, and mobile applications. I love turning complex problems into elegant, user-friendly solutions. Would you like me to scroll you to the About section?",
+    "I'm a fresh graduate in Electrical Engineering from Yogyakarta State University with a focus on Control Systems, Automation, and Computer  Engineering. Experienced in developing microcontroller-based systems and Internet of Things (IoT) solutions. I also have hands-on experience in web development using React.js, integrating frontend applications with backend APIs and modern web technologies. Currently seeking opportunities as a Web Developer, IoT Engineer,  Embedded/Hardware Engineer, Control System Engineer, or Automation Engineer",
   skills:
     "I'm proficient in React, TypeScript, Node.js, Python, and various other technologies. I also have experience with IoT, mobile development, and cloud services. Let me show you my skills section!",
   projects:
     "I've worked on 20+ projects including web applications, mobile apps, and IoT systems. Check out my featured projects to see some of my best work!",
   cv: "You can download my CV to learn more about my experience and qualifications. I'll prepare the download for you shortly!",
   contact:
-    "I'm currently available for new projects and collaborations! You can reach out through the contact form, and I'll get back to you as soon as possible.",
+    "I'm currently open to work and new collaboration opportunities. Feel free to reach out through the contact form, and I'll respond as soon as possible.",
   greeting:
     "Hello! 👋 I'm your virtual assistant. How can I help you today? Feel free to use the quick replies below or type your own message!",
   default:
