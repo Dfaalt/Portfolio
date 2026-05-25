@@ -76,7 +76,7 @@ const Navbar = () => {
         isScrolled ? "glass-card py-3" : "bg-background/80 backdrop-blur-sm py-4 sm:py-5"
       }`}
     >
-      <div className="w-full px-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between">
         <motion.a
           href="#home"
           className="text-2xl font-bold gradient-text"
