@@ -37,7 +37,7 @@ const predefinedResponses: Record<string, string> = {
   contact:
     "I'm currently open to work and new collaboration opportunities. Feel free to reach out through the contact form, and I'll respond as soon as possible.",
   greeting:
-    "Hello! 👋 I'm your virtual assistant. How can I help you today? Feel free to use the quick replies below or type your own message!",
+    "Hello! 👋 I'm Dfaalt virtual assistant. How can I help you today? Feel free to use the quick replies below or type your own message!",
   default:
     "Thanks for your message! I'm a simple assistant with predefined responses. Try using the quick reply buttons below, or ask me about my skills, projects, or experience!",
 };
