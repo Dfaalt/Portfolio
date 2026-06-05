@@ -162,51 +162,110 @@ const Chatbot = () => {
     handleBotResponse(reply.action, reply.scrollTo);
   };
 
-  const handleSendMessage = () => {
-    if (!inputValue.trim()) return;
+  // const handleSendMessage = () => {
+  //   if (!inputValue.trim()) return;
+
+  //   setMessages((prev) => [
+  //     ...prev,
+  //     { id: Date.now(), text: inputValue, isBot: false },
+  //   ]);
+  //   setInputValue("");
+
+  //   // Simple keyword matching for custom messages
+  //   const lowerInput = inputValue.toLowerCase();
+  //   let action = "default";
+
+  //   if (lowerInput.includes("about") || lowerInput.includes("who")) {
+  //     action = "about";
+  //   } else if (lowerInput.includes("skill") || lowerInput.includes("tech")) {
+  //     action = "skills";
+  //   } else if (
+  //     lowerInput.includes("project") ||
+  //     lowerInput.includes("work") ||
+  //     lowerInput.includes("portfolio")
+  //   ) {
+  //     action = "projects";
+  //   } else if (
+  //     lowerInput.includes("cv") ||
+  //     lowerInput.includes("resume") ||
+  //     lowerInput.includes("download")
+  //   ) {
+  //     action = "cv";
+  //   } else if (
+  //     lowerInput.includes("contact") ||
+  //     lowerInput.includes("hire") ||
+  //     lowerInput.includes("email")
+  //   ) {
+  //     action = "contact";
+  //   } else if (
+  //     lowerInput.includes("hello") ||
+  //     lowerInput.includes("hi") ||
+  //     lowerInput.includes("hey")
+  //   ) {
+  //     action = "greeting";
+  //   }
+
+  //   const scrollTo = quickReplies.find((r) => r.action === action)?.scrollTo;
+  //   handleBotResponse(action, scrollTo);
+  // };
+
+  const handleSendMessage = async () => {
+    if (!inputValue.trim() || isTyping) return;
+
+    const userMessage = inputValue;
 
     setMessages((prev) => [
       ...prev,
-      { id: Date.now(), text: inputValue, isBot: false },
+      { id: Date.now(), text: userMessage, isBot: false },
     ]);
+
     setInputValue("");
+    setIsTyping(true);
 
-    // Simple keyword matching for custom messages
-    const lowerInput = inputValue.toLowerCase();
-    let action = "default";
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: userMessage }),
+      });
 
-    if (lowerInput.includes("about") || lowerInput.includes("who")) {
-      action = "about";
-    } else if (lowerInput.includes("skill") || lowerInput.includes("tech")) {
-      action = "skills";
-    } else if (
-      lowerInput.includes("project") ||
-      lowerInput.includes("work") ||
-      lowerInput.includes("portfolio")
-    ) {
-      action = "projects";
-    } else if (
-      lowerInput.includes("cv") ||
-      lowerInput.includes("resume") ||
-      lowerInput.includes("download")
-    ) {
-      action = "cv";
-    } else if (
-      lowerInput.includes("contact") ||
-      lowerInput.includes("hire") ||
-      lowerInput.includes("email")
-    ) {
-      action = "contact";
-    } else if (
-      lowerInput.includes("hello") ||
-      lowerInput.includes("hi") ||
-      lowerInput.includes("hey")
-    ) {
-      action = "greeting";
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to get response");
+      }
+
+      setIsTyping(false);
+
+      const newMessageId = Date.now();
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: newMessageId,
+          text: data.reply,
+          isBot: true,
+          isTyping: true,
+        },
+      ]);
+
+      setTypingMessageId(newMessageId);
+    } catch (error) {
+      console.error(error);
+
+      setIsTyping(false);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          text: "Sorry, the AI assistant is currently unavailable. Please try again later.",
+          isBot: true,
+        },
+      ]);
     }
-
-    const scrollTo = quickReplies.find((r) => r.action === action)?.scrollTo;
-    handleBotResponse(action, scrollTo);
   };
 
   const handleTypingComplete = useCallback(() => {
