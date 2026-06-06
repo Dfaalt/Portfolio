@@ -46,7 +46,7 @@ Instructions:
 
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
-      contents: `{portfolioContext}\n\nUser question: ${message}`,
+      contents: `${portfolioContext}\n\nUser question: ${message}`,
     });
     return res.status(200).json({ reply: response.text });
   } catch (error) {
