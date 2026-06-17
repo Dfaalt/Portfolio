@@ -67,8 +67,8 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Engineering fast, elegant, and scalable web applications for the
-              modern digital world.
+              Electrical Engineering graduate with interest in control systems,
+              IoT, automation, and web development.
             </motion.p>
 
             <motion.div
