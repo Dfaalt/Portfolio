@@ -13,6 +13,65 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // IoT Projects (3)
+  {
+    title: "RFID Tag Monitoring Based Website",
+    description:
+      "RFID Tag Monitoring is a web-based system that uses ESP32 NodeMCU and RFID-RC522 to automatically read and transmit RFID card IDs to a local server via WiFi.",
+    fullDescription:
+      "RFID Tag Monitoring is a web-based system that uses ESP32 NodeMCU and RFID-RC522 to automatically read and transmit RFID card IDs to a local server via WiFi. The data is stored in a XAMPP-managed database and displayed through a web interface with REST API support for creating, updating, retrieving, and deleting records. With real-time monitoring, visual and audio confirmation, and seamless hardware–software integration, the system provides an efficient solution for RFID-based attendance and tag management.",
+    tags: ["ESP32", "RFID", "REST API"],
+    images: ["IoT/RFID1.webp", "IoT/RFID2.webp", "IoT/RFID3.webp"],
+    github: "#",
+    demo: "#",
+    category: "iot",
+    features: [
+      "Remote Control",
+      "Automation Rules",
+      "Voice Assistant",
+      "Energy Tracking",
+    ],
+  },
+  {
+    title: "DC Motor Speed Control with Microcontroller",
+    description:
+      "DC Motor Speed Control is a microcontroller-based project developed using Arduino Uno and a DC servo motor trainer to implement both open-loop and closed-loop speed control with a PID algorithm.",
+    fullDescription:
+      "DC Motor Speed Control is a microcontroller-based project developed using Arduino Uno and a DC servo motor trainer to implement both open-loop and closed-loop speed control with a PID algorithm. In the open-loop setup, motor speed is adjusted manually via PWM and results in unstable performance due to the absence of feedback. In contrast, the closed-loop configuration uses a tachogenerator sensor to provide real-time speed feedback, enabling the PID controller to automatically regulate PWM output and significantly improve stability. The system integrates an I2C LCD, motor driver, and keypad for parameter tuning, with performance analysis conducted through the Arduino Serial Plotter, demonstrating the practical effectiveness of PID control in embedded automation systems.",
+    tags: ["Arduino", "PID", "Control Systems"],
+    images: ["IoT/DCMotor1.webp", "IoT/DCMotor2.webp", "IoT/DCMotor3.webp"],
+    github: "#",
+    demo: "#",
+    category: "iot",
+    features: [
+      "Auto Watering",
+      "Soil Monitoring",
+      "Mobile App",
+      "Health Alerts",
+    ],
+  },
+  {
+    title: "Vehicle Speed Monitoring and Overspeed Warning System Based IoT",
+    description:
+      "Vehicle Speed Monitoring and Overspeed Warning System is an IoT-based solution developed using ESP32, ThingSpeak, and a Kodular mobile app to monitor vehicle speed in real time and provide overspeed alerts.",
+    fullDescription:
+      "Vehicle Speed Monitoring and Overspeed Warning System is an IoT-based solution developed using ESP32, ThingSpeak, and a Kodular mobile app to monitor vehicle speed in real time and provide overspeed alerts. The system uses dual IR sensors to calculate speed, displays data on an I2C LCD, triggers a buzzer warning when limits are exceeded, and captures images during violations. Speed data is transmitted to the cloud for remote monitoring via smartphone, enabling effective traffic monitoring, driver awareness, and data-driven analysis for intelligent transportation systems.",
+    tags: ["ESP32", "Microcontroller", "Alert System"],
+    images: [
+      "IoT/overspeed1.webp",
+      "IoT/overspeed2.webp",
+      "IoT/overspeed3.webp",
+    ],
+    github: "#",
+    demo: "#",
+    category: "iot",
+    features: [
+      "Real-time Monitoring",
+      "Overspeed Alerts",
+      "GPS Tracking",
+      "Data Logging",
+    ],
+  },
   // Web Projects (6)
   {
     title: "Split Bill with React",
@@ -128,65 +187,7 @@ export const projects: Project[] = [
       "Role-based Access",
     ],
   },
-  // IoT Projects (3)
-  {
-    title: "RFID Tag Monitoring Based Website",
-    description:
-      "RFID Tag Monitoring is a web-based system that uses ESP32 NodeMCU and RFID-RC522 to automatically read and transmit RFID card IDs to a local server via WiFi.",
-    fullDescription:
-      "RFID Tag Monitoring is a web-based system that uses ESP32 NodeMCU and RFID-RC522 to automatically read and transmit RFID card IDs to a local server via WiFi. The data is stored in a XAMPP-managed database and displayed through a web interface with REST API support for creating, updating, retrieving, and deleting records. With real-time monitoring, visual and audio confirmation, and seamless hardware–software integration, the system provides an efficient solution for RFID-based attendance and tag management.",
-    tags: ["ESP32", "RFID", "REST API"],
-    images: ["IoT/RFID1.webp", "IoT/RFID2.webp", "IoT/RFID3.webp"],
-    github: "#",
-    demo: "#",
-    category: "iot",
-    features: [
-      "Remote Control",
-      "Automation Rules",
-      "Voice Assistant",
-      "Energy Tracking",
-    ],
-  },
-  {
-    title: "DC Motor Speed Control with Microcontroller",
-    description:
-      "DC Motor Speed Control is a microcontroller-based project developed using Arduino Uno and a DC servo motor trainer to implement both open-loop and closed-loop speed control with a PID algorithm.",
-    fullDescription:
-      "DC Motor Speed Control is a microcontroller-based project developed using Arduino Uno and a DC servo motor trainer to implement both open-loop and closed-loop speed control with a PID algorithm. In the open-loop setup, motor speed is adjusted manually via PWM and results in unstable performance due to the absence of feedback. In contrast, the closed-loop configuration uses a tachogenerator sensor to provide real-time speed feedback, enabling the PID controller to automatically regulate PWM output and significantly improve stability. The system integrates an I2C LCD, motor driver, and keypad for parameter tuning, with performance analysis conducted through the Arduino Serial Plotter, demonstrating the practical effectiveness of PID control in embedded automation systems.",
-    tags: ["Arduino", "PID", "Control Systems"],
-    images: ["IoT/DCMotor1.webp", "IoT/DCMotor2.webp", "IoT/DCMotor3.webp"],
-    github: "#",
-    demo: "#",
-    category: "iot",
-    features: [
-      "Auto Watering",
-      "Soil Monitoring",
-      "Mobile App",
-      "Health Alerts",
-    ],
-  },
-  {
-    title: "Vehicle Speed Monitoring and Overspeed Warning System Based IoT",
-    description:
-      "Vehicle Speed Monitoring and Overspeed Warning System is an IoT-based solution developed using ESP32, ThingSpeak, and a Kodular mobile app to monitor vehicle speed in real time and provide overspeed alerts.",
-    fullDescription:
-      "Vehicle Speed Monitoring and Overspeed Warning System is an IoT-based solution developed using ESP32, ThingSpeak, and a Kodular mobile app to monitor vehicle speed in real time and provide overspeed alerts. The system uses dual IR sensors to calculate speed, displays data on an I2C LCD, triggers a buzzer warning when limits are exceeded, and captures images during violations. Speed data is transmitted to the cloud for remote monitoring via smartphone, enabling effective traffic monitoring, driver awareness, and data-driven analysis for intelligent transportation systems.",
-    tags: ["ESP32", "Microcontroller", "Alert System"],
-    images: [
-      "IoT/overspeed1.webp",
-      "IoT/overspeed2.webp",
-      "IoT/overspeed3.webp",
-    ],
-    github: "#",
-    demo: "#",
-    category: "iot",
-    features: [
-      "Real-time Monitoring",
-      "Overspeed Alerts",
-      "GPS Tracking",
-      "Data Logging",
-    ],
-  },
+
   // Mobile Projects (3)
   {
     title: "Culinaryndo Cuisine Recognition App",
@@ -269,7 +270,7 @@ export const projects: Project[] = [
 
 export const categories = [
   { value: "all", label: "All" },
-  { value: "web", label: "Web" },
   { value: "iot", label: "IoT" },
+  { value: "web", label: "Web" },
   { value: "mobile", label: "Mobile" },
 ];
