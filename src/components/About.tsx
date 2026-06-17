@@ -119,13 +119,13 @@ const About = () => {
           <p className="text-muted-foreground text-base md:text-lg text-center md:text-left leading-relaxed">
             Fresh graduate in Electrical Engineering from Yogyakarta State
             University with a focus on Control Systems, Automation, and Computer
-            Engineering. Experienced in developing microcontroller-based systems
-            and Internet of Things (IoT) solutions. I also have hands-on
-            experience in web development using React.js, integrating frontend
-            applications with backend APIs and modern web technologies.
-            Currently seeking opportunities as a Web Developer, IoT Engineer,
-            Embedded/Hardware Engineer, Control System Engineer, or Automation
-            Engineer.
+            Engineering. Experienced in designing and implementing systems based
+            on Microcontrollers, Internet of Things (IoT), and AI/ML. I also
+            have hands-on experience in web development using React.js,
+            integrating frontend applications with backend APIs and modern web
+            technologies. Currently seeking opportunities as a IoT Engineer,
+            Embedded/Hardware Engineer, Control System Engineer, Automation
+            Engineer, or Web Developer.
           </p>
         </motion.div>
 
